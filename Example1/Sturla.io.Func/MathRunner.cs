@@ -13,8 +13,7 @@ namespace Sturla.io.Func.One.Lib
 		/// <param name="mathProbem">The Func delegate method passed in.</param>
 		public int RunMethod(int value1, int value2, Func<int,int,int> mathProbem)
 		{
-			var result = mathProbem(value1, value2);
-			return result;
+			return mathProbem(value1, value2);
 		}
     }
 }
