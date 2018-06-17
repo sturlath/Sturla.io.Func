@@ -59,7 +59,7 @@ namespace Sturla.io.Func.Three.Lib
 		/// A generic Benchmark for a method that takes in some value/class (of type T1) 
 		/// and returns a type T
 		/// </summary>
-		public static void Benchmark<T1, T>(Func<T1, T> func, T1 obj)
+		public static void Benchmark<TArgument, TResult>(Func<TArgument, TResult> func, TArgument obj)
 		{
 			var watch = new Stopwatch();
 

@@ -14,15 +14,15 @@ namespace Sturla.io.Func.Four.Lib
 		/// <summary>
 		/// All errors are caught here so there is no need for try/catch except here.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <typeparam name="T1"></typeparam>
+		/// <typeparam name="TResult"></typeparam>
+		/// <typeparam name="TArgument"></typeparam>
 		/// <param name="method"></param>
 		/// <param name="request"></param>
 		/// <returns></returns>
-		public static T SafeExecutor<T, T1>(Func<T1, T> method, T1 request)
+		public static TResult SafeExecutor<TArgument,TResult>(Func<TArgument, TResult> method, TArgument request)
 		{
 			//create an instance of the type we are going to return.
-			var response = (T)Activator.CreateInstance(typeof(T));
+			var response = (TResult)Activator.CreateInstance(typeof(TResult));
 
 			try
 			{
