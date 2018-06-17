@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHelperConsole", "Examp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHelperLib", "Example4\Sturla.io.Func.Four.Lib\ErrorHelperLib.csproj", "{981F1C73-71F1-4B2E-B1E2-D4DEB8164DF7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example5", "Example5", "{E2B50FEF-6D22-4918-B72E-75F439624640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonSetup", "Sturla.io.Func.Five.Console\ButtonSetup.csproj", "{AD9B0BC3-9CA9-4F85-AFCD-8FED5CD09820}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +69,10 @@ Global
 		{981F1C73-71F1-4B2E-B1E2-D4DEB8164DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{981F1C73-71F1-4B2E-B1E2-D4DEB8164DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{981F1C73-71F1-4B2E-B1E2-D4DEB8164DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9B0BC3-9CA9-4F85-AFCD-8FED5CD09820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9B0BC3-9CA9-4F85-AFCD-8FED5CD09820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9B0BC3-9CA9-4F85-AFCD-8FED5CD09820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9B0BC3-9CA9-4F85-AFCD-8FED5CD09820}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +86,7 @@ Global
 		{09C12EE7-CFA2-42A9-AA7F-38CD74A197CD} = {BF601D7E-CE9C-459B-B5AF-E00523189823}
 		{CA7E4363-0240-43B3-AB97-50D65ED37F52} = {A21118F7-8260-4D8A-9E50-39EEE2229C05}
 		{981F1C73-71F1-4B2E-B1E2-D4DEB8164DF7} = {A21118F7-8260-4D8A-9E50-39EEE2229C05}
+		{AD9B0BC3-9CA9-4F85-AFCD-8FED5CD09820} = {E2B50FEF-6D22-4918-B72E-75F439624640}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C4200F2-EE6D-452B-A140-1A87B230CDEB}
