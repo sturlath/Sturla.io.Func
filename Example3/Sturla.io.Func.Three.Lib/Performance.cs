@@ -9,13 +9,13 @@ namespace Sturla.io.Func.Three.Lib
 		/// <summary>
 		/// Benchmark a method that "returns" void. (has a void signature)
 		/// </summary>
-		/// <param name="func"></param>
-		public static void Benchmark(Action func)
+		/// <param name="action"></param>
+		public static void Benchmark(Action action)
 		{
 			var watch = new Stopwatch();
 
 			watch.Start();
-			func(); //Run the method delegate 
+			action(); //Run the method delegate 
 			watch.Stop();
 
 			Log.Information("ElapsedMilliseconds: {elapsedMilliseconds}ms", watch.ElapsedMilliseconds);

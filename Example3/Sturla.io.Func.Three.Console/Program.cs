@@ -23,14 +23,15 @@ namespace Sturla.io.Func.Three.Console
 			//Benchmark measure it many times and get an average
 			Performance.Benchmark(10, methods.CalculateMillionPrimeNumbers);
 
+			// Benchmark the time it takes to ToList a range of 10,000 items
+			Performance.Benchmark(() => { Enumerable.Range(0, 10000).ToList(); });
+
 			//Benchmark this type of method with the signature "int parameter and int return value" and the value.
 			Performance.Benchmark(methods.Big, 10);
 
 			//The use of a generic version
 			Performance.Benchmark(methods.Small, new JustSomeClass());
 
-			// Benchmark the time it takes to ToList a range of 10,000 items
-			Performance.Benchmark(() => { Enumerable.Range(0, 10000).ToList(); });
 		}
 	}
 }
