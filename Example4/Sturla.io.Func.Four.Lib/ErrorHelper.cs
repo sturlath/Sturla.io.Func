@@ -116,6 +116,7 @@ namespace Sturla.io.Func.Four.Lib
 				return JsonConvert.DeserializeObject<T>(receiveStream);
 			}
 
+			// If we reached here there is something else wrong so we add a Error to the response with message.
 			return new T
 			{
 				Error = new Error
