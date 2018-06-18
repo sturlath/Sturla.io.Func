@@ -27,7 +27,7 @@ namespace Sturla.io.Func.Three.Console
 			Performance.Benchmark(() => { Enumerable.Range(0, 10000).ToList(); });
 
 			//Benchmark this type of method with the signature "int parameter and int return value" and the value.
-			Performance.Benchmark(methods.Big, 10);
+			int result = Performance.Benchmark(methods.Big, 10);
 
 			//The use of a generic version
 			Performance.Benchmark(methods.Small, new JustSomeClass());

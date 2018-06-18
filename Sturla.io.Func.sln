@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example6", "Example6", "{4D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CachingOfExpensiveMethodCalls", "Sturla.io.Func.Six.Console\CachingOfExpensiveMethodCalls.csproj", "{3B232981-B439-4894-96AD-6B86D0932DCE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example7", "Example7", "{E845A964-AFA3-43BD-A53B-41F752CCBD27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchConsole", "Example7\Sturla.io.Func.Seven.Console\SwitchConsole.csproj", "{315D10DE-C914-4D7F-9840-14A2E049B81D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,10 @@ Global
 		{3B232981-B439-4894-96AD-6B86D0932DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B232981-B439-4894-96AD-6B86D0932DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B232981-B439-4894-96AD-6B86D0932DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315D10DE-C914-4D7F-9840-14A2E049B81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315D10DE-C914-4D7F-9840-14A2E049B81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315D10DE-C914-4D7F-9840-14A2E049B81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315D10DE-C914-4D7F-9840-14A2E049B81D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +104,7 @@ Global
 		{981F1C73-71F1-4B2E-B1E2-D4DEB8164DF7} = {A21118F7-8260-4D8A-9E50-39EEE2229C05}
 		{AD9B0BC3-9CA9-4F85-AFCD-8FED5CD09820} = {E2B50FEF-6D22-4918-B72E-75F439624640}
 		{3B232981-B439-4894-96AD-6B86D0932DCE} = {4D3CB978-FE1C-4929-977D-EA367D518F24}
+		{315D10DE-C914-4D7F-9840-14A2E049B81D} = {E845A964-AFA3-43BD-A53B-41F752CCBD27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C4200F2-EE6D-452B-A140-1A87B230CDEB}

@@ -44,15 +44,17 @@ namespace Sturla.io.Func.Three.Lib
 		/// </summary>
 		/// <param name="func"></param>
 		/// <param name="value1"></param>
-		public static void Benchmark(Func<int, int> func, int value1)
+		public static int Benchmark(Func<int, int> func, int value1)
 		{
 			var watch = new Stopwatch();
 
 			watch.Start();
-			func(value1); //Run the method delegate 
+			var result = func(value1); //Run the method delegate 
 			watch.Stop();
 
 			Log.Information("ElapsedMilliseconds: {elapsedMilliseconds}ms", watch.ElapsedMilliseconds);
+
+			return result;
 		}
 
 		/// <summary>
