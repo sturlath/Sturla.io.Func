@@ -1,4 +1,4 @@
-﻿namespace Sturla.io.Func.Three.Lib
+﻿namespace Sturla.io.Func.BenchmarkLib
 {
 	public class JustSomeClass
 	{

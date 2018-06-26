@@ -1,6 +1,6 @@
-﻿using Sturla.io.Func.Four.Lib;
+﻿using Sturla.io.Func.ErrorHelperLib;
 
-namespace Sturla.io.Func.Four.Console
+namespace Sturla.io.Func.BenchmarkLib
 {
 	public class SomeResponse : BaseResponse
 	{

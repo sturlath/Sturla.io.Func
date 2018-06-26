@@ -1,4 +1,4 @@
-﻿namespace Sturla.io.Func.One.Lib
+﻿namespace Sturla.io.Func.CalculatorLib
 {
 	public static class Multiplication
 	{

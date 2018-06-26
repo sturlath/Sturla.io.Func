@@ -1,8 +1,8 @@
 ﻿using CommandLine;
 using Serilog;
-using Sturla.io.Func.Two.Lib;
+using Sturla.io.Func.ActionLib;
 
-namespace Sturla.io.Func.Two.Console
+namespace Sturla.io.Func.Action.Console
 {
 	public class Program
 	{

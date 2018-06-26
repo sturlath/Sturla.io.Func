@@ -2,9 +2,9 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Serilog;
-using Sturla.io.Func.Four.Lib;
+using Sturla.io.Func.ErrorHelperLib;
 
-namespace Sturla.io.Func.Four.Console
+namespace Sturla.io.Func.BenchmarkLib
 {
 	static class Program
 	{

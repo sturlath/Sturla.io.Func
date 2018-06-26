@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{06C8D5F4-4094-4A05-95AC-326709ECBB03}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Sturla.io.Func.One.Console</RootNamespace>
-    <AssemblyName>FuncOneConsole</AssemblyName>
+    <RootNamespace>Sturla.io.Func.Calculator.Console</RootNamespace>
+    <AssemblyName>CalculatorConsole</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sturla.io.Func\FuncOneLib.csproj">
-      <Project>{8d775ddf-cf7b-44bb-9dde-e3c91f6ee2ff}</Project>
-      <Name>FuncOneLib</Name>
+    <ProjectReference Include="..\Sturla.io.Func\CalculatorLib.csproj">
+      <Project>{C2589404-B2E5-4337-8D51-5EB122832159}</Project>
+      <Name>CalculatorLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

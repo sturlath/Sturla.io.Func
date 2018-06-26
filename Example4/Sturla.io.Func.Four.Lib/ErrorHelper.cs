@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Sturla.io.Func.Four.Lib
+namespace Sturla.io.Func.ErrorHelperLib
 {
 	public class ErrorHelper
 	{
@@ -19,7 +19,7 @@ namespace Sturla.io.Func.Four.Lib
 		/// <param name="method"></param>
 		/// <param name="request"></param>
 		/// <returns></returns>
-		public static TResult SafeExecutor<TArgument,TResult>(Func<TArgument, TResult> method, TArgument request)
+		public static TResult SafeExecutor<TArgument, TResult>(Func<TArgument, TResult> method, TArgument request)
 		{
 			//create an instance of the type we are going to return.
 			var response = (TResult)Activator.CreateInstance(typeof(TResult));
@@ -27,7 +27,7 @@ namespace Sturla.io.Func.Four.Lib
 			try
 			{
 				//Run the method delegate. All exceptions are handled here!
-				return method(request); 
+				return method(request);
 			}
 			catch (WebException webEx)
 			{

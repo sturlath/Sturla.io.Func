@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Serilog;
 
-namespace Sturla.io.Func.Six.Console
+namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 {
 	/// <summary>
 	/// Memoization take a look at https://www.infoq.com/news/2007/01/CSharp-memory

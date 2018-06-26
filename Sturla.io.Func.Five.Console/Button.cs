@@ -1,4 +1,4 @@
-﻿namespace Sturla.io.Func.Five.Console
+﻿namespace Sturla.io.Func.ButtonSetup.Console
 {
 	public class Button
 	{

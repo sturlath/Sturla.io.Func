@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using Serilog;
 
-namespace Sturla.io.Func.Three.Lib
+namespace Sturla.io.Func.BenchmarkLib
 {
 	public static class Performance
 	{

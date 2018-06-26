@@ -31,11 +31,11 @@ namespace Sturla.io.Func.Seven.Console
 			};
 
 			int numberToFind = 1;
-			
-			
+
+
 			var t1 = actionSwitch.FirstOrDefault(sw => sw.Key(Convert.ToInt32(numberToFind)));
 
-			if(t1.Key != null)
+			if (t1.Key != null)
 			{
 				//TODO: Late at night.. need to get back to this... if numberToFind is not found we get an null reference exception. 
 				// and I really don't like how I do this right now...
@@ -57,7 +57,7 @@ namespace Sturla.io.Func.Seven.Console
 				 { x => x == 5,  () => "5"},
 			};
 
-			string returnValue = string.Empty ;
+			string returnValue = string.Empty;
 
 			var t2 = funcSwitch.FirstOrDefault(sw => sw.Key(Convert.ToInt32(numberToFind)));
 
@@ -69,7 +69,24 @@ namespace Sturla.io.Func.Seven.Console
 			Log.Information("The return value: {value}", returnValue);
 
 			System.Console.ReadKey();
+
+
+			// With C# 7.0 and up you can use 'when' in a switch statements.
+
+			switch (numberToFind)
+			{
+				case var expression when numberToFind < 0:
+					Log.Information("{val}", "0");
+					break;
+				case var expression when (numberToFind >= 0 && numberToFind < 5):
+					//some code
+					break;
+				default:
+					break;
+			}
 		}
+
+
 
 	}
 }

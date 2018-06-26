@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using Serilog;
-using Sturla.io.Func.Three.Lib;
+using Sturla.io.Func.BenchmarkLib;
 
-namespace Sturla.io.Func.Three.Console
+namespace Sturla.io.Func.Benchmark.Console
 {
 	class Program
 	{

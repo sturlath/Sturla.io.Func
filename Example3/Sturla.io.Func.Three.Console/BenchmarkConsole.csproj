@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{55342217-E8C3-4073-87EA-9E741E5EB9D0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Sturla.io.Func.Three.Console</RootNamespace>
+    <RootNamespace>Sturla.io.Func.Benchmark.Console</RootNamespace>
     <AssemblyName>BenchmarkConsole</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

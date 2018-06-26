@@ -7,8 +7,8 @@
     <ProjectGuid>{32E5E764-4CF5-4BC9-84CC-A949EF9BE238}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sturla.io.Func.Two.Lib</RootNamespace>
-    <AssemblyName>ActionTwoLib</AssemblyName>
+    <RootNamespace>Sturla.io.Func.ActionLib</RootNamespace>
+    <AssemblyName>ActionLib</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

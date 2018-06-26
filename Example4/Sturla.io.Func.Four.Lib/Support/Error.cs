@@ -1,4 +1,4 @@
-﻿namespace Sturla.io.Func.Four.Lib
+﻿namespace Sturla.io.Func.ErrorHelperLib
 {
 	public class Error
 	{

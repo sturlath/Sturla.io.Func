@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example2", "Example2", "{68
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example3", "Example3", "{BF601D7E-CE9C-459B-B5AF-E00523189823}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuncOneLib", "Example1\Sturla.io.Func\FuncOneLib.csproj", "{C2589404-B2E5-4337-8D51-5EB122832159}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLib", "Example1\Sturla.io.Func\CalculatorLib.csproj", "{C2589404-B2E5-4337-8D51-5EB122832159}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuncOneConsole", "Example1\Sturla.io.Func.Console\FuncOneConsole.csproj", "{06C8D5F4-4094-4A05-95AC-326709ECBB03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorConsole", "Example1\Sturla.io.Func.Console\CalculatorConsole.csproj", "{06C8D5F4-4094-4A05-95AC-326709ECBB03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionOneConsole", "Example2\Sturla.io.Func.Two.Console\ActionOneConsole.csproj", "{F588E569-69B6-4125-AB09-AF1852A3CCE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionConsole", "Example2\Sturla.io.Func.Two.Console\ActionConsole.csproj", "{F588E569-69B6-4125-AB09-AF1852A3CCE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionTwoLib", "Example2\Sturla.io.Func.Two.Lib\ActionTwoLib.csproj", "{32E5E764-4CF5-4BC9-84CC-A949EF9BE238}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionLib", "Example2\Sturla.io.Func.Two.Lib\ActionLib.csproj", "{32E5E764-4CF5-4BC9-84CC-A949EF9BE238}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example4", "Example4", "{A21118F7-8260-4D8A-9E50-39EEE2229C05}"
 EndProject

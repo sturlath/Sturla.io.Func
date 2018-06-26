@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sturla.io.Func.Two.Lib
+namespace Sturla.io.Func.ActionLib
 {
 	public class MathRunner
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Serilog;
 
-namespace Sturla.io.Func.Six.Console
+namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 {
 	class Program
 	{

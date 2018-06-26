@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3B232981-B439-4894-96AD-6B86D0932DCE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Sturla.io.Func.Six.Console</RootNamespace>
+    <RootNamespace>Sturla.io.Func.CachingOfExpensiveMethodCalls.Console</RootNamespace>
     <AssemblyName>CachingOfExpensiveMethodCalls</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
