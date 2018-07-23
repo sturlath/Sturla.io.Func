@@ -8,6 +8,7 @@ namespace Sturla.io.Func.BenchmarkLib
 		{
 			for (int i = 0; i < 10; i++)
 			{
+				//No actual prime numbers where hurt in this example!
 				Thread.Sleep(10); //ms
 			}
 		}

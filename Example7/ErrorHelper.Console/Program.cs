@@ -6,9 +6,9 @@ using Sturla.io.Func.ErrorHelperLib;
 
 namespace Sturla.io.Func.ErrorHelperConsole
 {
-	static class Program
+	internal static class Program
 	{
-		static async Task Main(string[] args)
+		private static async Task Main(string[] args)
 		{
 			#region Logging
 			Log.Logger = new LoggerConfiguration()
@@ -17,10 +17,10 @@ namespace Sturla.io.Func.ErrorHelperConsole
 			.CreateLogger();
 			#endregion
 
-			var request = new SomeRequest();
+			SomeRequest request = new SomeRequest();
 
 			//Lets say this is a web controller and the request is coming from the internet. So lets pretend this is a WebApi Controller.
-			var response = await SomeWebController(request);
+			SomeResponse response = await SomeWebControllerApi(request);
 
 			Log.Information("If there was an error it's http code is : {code} and http message is : {message}", response.Error.ErrorCode, response.Error.ErrorMessage);
 		}
@@ -30,7 +30,7 @@ namespace Sturla.io.Func.ErrorHelperConsole
 		/// </summary>
 		/// <param name="request"></param>
 		/// <returns></returns>
-		private static async Task<SomeResponse> SomeWebController(SomeRequest request)
+		private static async Task<SomeResponse> SomeWebControllerApi(SomeRequest request)
 		{
 			Func<SomeRequest, Task<SomeResponse>> function = async (SomeRequest r) =>
 			{

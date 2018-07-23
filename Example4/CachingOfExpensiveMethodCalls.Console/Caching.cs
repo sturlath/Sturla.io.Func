@@ -19,7 +19,7 @@ namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 		/// </summary>
 		/// <typeparam name="TArgument"></typeparam>
 		/// <typeparam name="TResult"></typeparam>
-		/// <param name="function"></param>
+		/// <param name="function">The expensive method sent in to cache its results.</param>
 		/// <returns></returns>
 		public static Func<TArgument, TResult> Memoize<TArgument, TResult>(this Func<TArgument, TResult> function)
 		{
@@ -38,7 +38,7 @@ namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 			return a =>
 			{
 				// If we have already got value cached from e.g Fibonacci(i) or  it has been added to values
-				// and there is no need to call the expensive function. We have the result
+				// and there is no need to call the expensive function. We already have the result in cache.
 				if (!values.TryGetValue(a, out TResult value))
 				{
 					value = function(a);

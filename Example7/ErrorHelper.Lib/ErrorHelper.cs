@@ -22,7 +22,7 @@ namespace Sturla.io.Func.ErrorHelperLib
 		public static TResult SafeExecutor<TArgument, TResult>(Func<TArgument, TResult> method, TArgument request)
 		{
 			//create an instance of the type we are going to return.
-			var response = (TResult)Activator.CreateInstance(typeof(TResult));
+			TResult response = (TResult)Activator.CreateInstance(typeof(TResult));
 
 			try
 			{
@@ -33,6 +33,11 @@ namespace Sturla.io.Func.ErrorHelperLib
 			{
 				SetWebException(webEx, ref response);
 			}
+			//If you are using e.g Refit you could add that or other types of exception handling here.
+			//catch (ApiException webEx)
+			//{
+			//	SetApiException(webEx, ref response);
+			//}
 			catch (Exception ex)
 			{
 				SetException(ex, ref response);
@@ -53,7 +58,7 @@ namespace Sturla.io.Func.ErrorHelperLib
 		}
 
 		/// <summary>
-		/// 
+		/// General exception
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="ex"></param>
@@ -72,7 +77,7 @@ namespace Sturla.io.Func.ErrorHelperLib
 		/// <param name="errorCode"></param>
 		public static void SetError<T>(ref T obj, string errorMessage, string errorCode)
 		{
-			var prop = obj.GetType().GetProperty("Error", BindingFlags.Public | BindingFlags.Instance);
+			PropertyInfo prop = obj.GetType().GetProperty("Error", BindingFlags.Public | BindingFlags.Instance);
 
 			Error error = new Error()
 			{
@@ -94,12 +99,12 @@ namespace Sturla.io.Func.ErrorHelperLib
 		/// <returns></returns>
 		public static async Task<T> ReadResponse<T>(HttpResponseMessage message) where T : BaseResponse, new()
 		{
-			var receiveStream = await message.Content.ReadAsStringAsync();
+			string receiveStream = await message.Content.ReadAsStringAsync();
 
 			// Here you will have to handle all the status codes you want to result in an error message.
 			if (message.StatusCode == HttpStatusCode.Unauthorized)
 			{
-				var response = new T
+				T response = new T
 				{
 					Error = new Error
 					{

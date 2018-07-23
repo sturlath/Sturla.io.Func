@@ -33,9 +33,9 @@ namespace Sturla.io.Func.Seven.Console
 			int numberToFind = 1;
 
 
-			var t1 = actionSwitch.FirstOrDefault(sw => sw.Key(Convert.ToInt32(numberToFind)));
+			var actionSwitchResult = actionSwitch.FirstOrDefault(sw => sw.Key(Convert.ToInt32(numberToFind)));
 
-			if (t1.Key != null)
+			if (actionSwitchResult.Key != null)
 			{
 				//TODO: Late at night.. need to get back to this... if numberToFind is not found we get an null reference exception. 
 				// and I really don't like how I do this right now...
@@ -43,7 +43,7 @@ namespace Sturla.io.Func.Seven.Console
 			}
 
 
-			Log.Information("And now Func switch example");
+			Log.Information("and now Func switch example");
 
 			var funcSwitch = new Dictionary<Func<int, bool>, Func<string>>
 			{
@@ -59,9 +59,11 @@ namespace Sturla.io.Func.Seven.Console
 
 			string returnValue = string.Empty;
 
-			var t2 = funcSwitch.FirstOrDefault(sw => sw.Key(Convert.ToInt32(numberToFind)));
+			var funcSwitchReulst = funcSwitch.FirstOrDefault(sw => sw.Key(Convert.ToInt32(numberToFind)));
 
-			if (t2.Key != null)
+			// If t2 is null there is no value and .Value() would throw an exception.
+			// Please suggest a better way to do this. 
+			if (funcSwitchReulst.Key != null)
 			{
 				returnValue = funcSwitch.FirstOrDefault(sw => sw.Key(Convert.ToInt32(numberToFind))).Value();
 			}

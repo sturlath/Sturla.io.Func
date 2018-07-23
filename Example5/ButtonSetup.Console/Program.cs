@@ -11,16 +11,20 @@ namespace Sturla.io.Func.ButtonSetup.Console
 			{
 				btn.Height = 42;
 				btn.Width = 64;
+				btn.Color = "Red";
 				//...more setup code for a button
 
 				x(btn);
 			};
 
+			// new up loads of buttons
 			var btn1 = new Button();
 			var btn2 = new Button();
 			var btn3 = new Button();
 
-			// Cleaner setup of the code. Makes the method shorter and the code more readable.
+			// Cleaner setup of the code. 
+			// Just code that changes  
+			// Makes the method shorter and the code more readable.
 			setupButton(btn1, btn => btn.Text = "OK");
 			setupButton(btn2, btn => btn.Text = "Cancel");
 			setupButton(btn3, btn => btn.Text = "Save");
