@@ -1,5 +1,6 @@
-﻿using System;
-using Serilog;
+﻿using Serilog;
+using System;
+using System.Threading;
 
 namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 {
@@ -31,10 +32,10 @@ namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 			SuperComplexLowerCasing = SuperComplexLowerCasing.Memoize();
 
 			// Some other super complex and time consuming lowercasing.
-			Log.Information("{lower}", SuperComplexLowerCasing("Test"));
-			Log.Information("{lower}", SuperComplexLowerCasing("Test"));
-			Log.Information("{lower}", SuperComplexLowerCasing("Not"));
-			Log.Information("{lower}", SuperComplexLowerCasing("Test"));
+			Log.Information("{lower}", SuperComplexLowerCasing("ChachedFirstTime"));//runs for 5 sec
+			Log.Information("{lower}", SuperComplexLowerCasing("ChachedFirstTime"));//will run fast because its cached
+			Log.Information("{lower}", SuperComplexLowerCasing("NotCached")); //runs for 5 sec
+			Log.Information("{lower}", SuperComplexLowerCasing("ChachedFirstTime"));//will run fast because its cached
 
 			System.Console.ReadKey();
 		}
@@ -44,8 +45,12 @@ namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 			return n > 1 ? Fibonacci(n - 1) + Fibonacci(n - 2) : n;
 		};
 
+		/// <summary>
+		/// Just some method that takes a long time
+		/// </summary>
 		public static Func<string, string> SuperComplexLowerCasing = (n) =>
 		{
+			Thread.Sleep(5000);
 			// I just didn't come up with anything more clever. Need to find my old Calculus books.
 			return n.ToLower();
 		};

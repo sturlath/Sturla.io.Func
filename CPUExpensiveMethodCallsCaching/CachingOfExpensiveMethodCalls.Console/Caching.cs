@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
-using Serilog;
 
 namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 {
@@ -10,12 +10,15 @@ namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 	public static class Caching
 	{
 		/// <summary>
+		/// <para>
 		/// Here you do recursion, but you remember the value of each Fibonacci/LowerCasing. 
 		/// Thus, instead of 29 Million for 35th Fibonacci you do 37 calculations. And it takes just 0.002 seconds.
-		/// 
+		/// </para>
+		/// <para>
 		/// "In computing, memoization or memoisation is an optimization technique used primarily to speed up computer programs 
 		/// by storing the results of expensive function calls and returning the cached result when the same inputs occur again."
 		/// https://en.wikipedia.org/wiki/Memoization
+		/// </para>
 		/// </summary>
 		/// <typeparam name="TArgument"></typeparam>
 		/// <typeparam name="TResult"></typeparam>
@@ -23,28 +26,32 @@ namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 		/// <returns></returns>
 		public static Func<TArgument, TResult> Memoize<TArgument, TResult>(this Func<TArgument, TResult> function)
 		{
-			var methodDictionaries = new Dictionary<string, Dictionary<TArgument, TResult>>();
+			var allDictionaries = new Dictionary<string, Dictionary<TArgument, TResult>>();
 
 			var name = function.Method.Name;
-			if (!methodDictionaries.TryGetValue(name, out Dictionary<TArgument, TResult> values))
+
+			// If the this kind of function has not been cached (Memoized) before we need to create a dictionary and add it. 
+			if (!allDictionaries.TryGetValue(name, out Dictionary<TArgument, TResult> functionDictionary))
 			{
-				values = new Dictionary<TArgument, TResult>();
+				functionDictionary = new Dictionary<TArgument, TResult>();
 
 				Log.Information("MethodName: {name}, ReturnType: {returnType}", name, function.Method.ReturnType);
 
-				methodDictionaries.Add(name, values);
+				allDictionaries.Add(name, functionDictionary);
 			}
 
-			return a =>
+			return key =>
 			{
-				// If we have already got value cached from e.g Fibonacci(i) or  it has been added to values
-				// and there is no need to call the expensive function. We already have the result in cache.
-				if (!values.TryGetValue(a, out TResult value))
+				// If the value calculated was not in this function dictionary we need to calculate it and add it.
+				if (!functionDictionary.TryGetValue(key, out TResult value))
 				{
-					value = function(a);
-					values.Add(a, value);
+					value = function(key);
+					functionDictionary.Add(key, value);
 				}
 
+				// If we have already got value cached from e.g Fibonacci(i) or it has been added to values
+				// there is no need to call the CPU expensive function because we already have the result in cache!
+				// So we return the previously calculated value.
 				return value;
 			};
 		}
