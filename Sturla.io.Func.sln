@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CalcActionExample", "CalcAc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BenchmarkExample", "BenchmarkExample", "{BF601D7E-CE9C-459B-B5AF-E00523189823}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExpensiveMethodCallsCaching", "ExpensiveMethodCallsCaching", "{A21118F7-8260-4D8A-9E50-39EEE2229C05}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CPUExpensiveMethodCallsCaching", "CPUExpensiveMethodCallsCaching", "{A21118F7-8260-4D8A-9E50-39EEE2229C05}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ButtonSetupExample", "ButtonSetupExample", "{E2B50FEF-6D22-4918-B72E-75F439624640}"
 EndProject
@@ -45,10 +45,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHelperLib", "Excpetion
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHelperLibTests", "ExcpetionHelperExample\ErrorHelperLibTests\ErrorHelperLibTests.csproj", "{4B627C17-35FF-41FD-AC2A-75313C4B3FB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CachingOfExpensiveMethodCalls", "ExpensiveMethodCallsCaching\CachingOfExpensiveMethodCalls.Console\CachingOfExpensiveMethodCalls.csproj", "{3B232981-B439-4894-96AD-6B86D0932DCE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CachingOfExpensiveMethodCallsTests", "ExpensiveMethodCallsCaching\CachingOfExpensiveMethodCallsTests\CachingOfExpensiveMethodCallsTests.csproj", "{4BF6E8BF-0BBD-414D-AF94-3D2404CE3201}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchConsole", "SwitchExample\Switch.Console\SwitchConsole.csproj", "{315D10DE-C914-4D7F-9840-14A2E049B81D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchTests", "SwitchExample\SwitchTests\SwitchTests.csproj", "{AB247A23-A0D2-43C1-AEC8-44254639057B}"
@@ -60,6 +56,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFuncTests", "SimpleFuncExample\SimpleFuncTests\SimpleFuncTests.csproj", "{487CFBE4-0095-46B1-A7BE-C2EDB08BCE03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFuncConsole", "SimpleFuncExample\SimpleFuncConsole\SimpleFuncConsole.csproj", "{FC59D635-19B7-4A4C-A2B6-47CF5F15CD1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CachingOfExpensiveMethodCalls", "CPUExpensiveMethodCallsCaching\CachingOfExpensiveMethodCalls.Console\CachingOfExpensiveMethodCalls.csproj", "{3B232981-B439-4894-96AD-6B86D0932DCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CachingOfExpensiveMethodCallsTests", "CPUExpensiveMethodCallsCaching\CachingOfExpensiveMethodCallsTests\CachingOfExpensiveMethodCallsTests.csproj", "{8270BA60-AD93-419F-8AAB-8D20C565C8CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,14 +123,6 @@ Global
 		{4B627C17-35FF-41FD-AC2A-75313C4B3FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B627C17-35FF-41FD-AC2A-75313C4B3FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B627C17-35FF-41FD-AC2A-75313C4B3FB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B232981-B439-4894-96AD-6B86D0932DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B232981-B439-4894-96AD-6B86D0932DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B232981-B439-4894-96AD-6B86D0932DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B232981-B439-4894-96AD-6B86D0932DCE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BF6E8BF-0BBD-414D-AF94-3D2404CE3201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BF6E8BF-0BBD-414D-AF94-3D2404CE3201}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BF6E8BF-0BBD-414D-AF94-3D2404CE3201}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BF6E8BF-0BBD-414D-AF94-3D2404CE3201}.Release|Any CPU.Build.0 = Release|Any CPU
 		{315D10DE-C914-4D7F-9840-14A2E049B81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{315D10DE-C914-4D7F-9840-14A2E049B81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{315D10DE-C914-4D7F-9840-14A2E049B81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -151,6 +143,14 @@ Global
 		{FC59D635-19B7-4A4C-A2B6-47CF5F15CD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC59D635-19B7-4A4C-A2B6-47CF5F15CD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC59D635-19B7-4A4C-A2B6-47CF5F15CD1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B232981-B439-4894-96AD-6B86D0932DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B232981-B439-4894-96AD-6B86D0932DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B232981-B439-4894-96AD-6B86D0932DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B232981-B439-4894-96AD-6B86D0932DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8270BA60-AD93-419F-8AAB-8D20C565C8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8270BA60-AD93-419F-8AAB-8D20C565C8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8270BA60-AD93-419F-8AAB-8D20C565C8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8270BA60-AD93-419F-8AAB-8D20C565C8CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,13 +170,13 @@ Global
 		{CA7E4363-0240-43B3-AB97-50D65ED37F52} = {E845A964-AFA3-43BD-A53B-41F752CCBD27}
 		{981F1C73-71F1-4B2E-B1E2-D4DEB8164DF7} = {E845A964-AFA3-43BD-A53B-41F752CCBD27}
 		{4B627C17-35FF-41FD-AC2A-75313C4B3FB7} = {E845A964-AFA3-43BD-A53B-41F752CCBD27}
-		{3B232981-B439-4894-96AD-6B86D0932DCE} = {A21118F7-8260-4D8A-9E50-39EEE2229C05}
-		{4BF6E8BF-0BBD-414D-AF94-3D2404CE3201} = {A21118F7-8260-4D8A-9E50-39EEE2229C05}
 		{315D10DE-C914-4D7F-9840-14A2E049B81D} = {4D3CB978-FE1C-4929-977D-EA367D518F24}
 		{AB247A23-A0D2-43C1-AEC8-44254639057B} = {4D3CB978-FE1C-4929-977D-EA367D518F24}
 		{00F92B7E-F0C5-446F-BBEE-487DE504F781} = {365E1F08-5453-446F-9AD8-0503DC028918}
 		{487CFBE4-0095-46B1-A7BE-C2EDB08BCE03} = {365E1F08-5453-446F-9AD8-0503DC028918}
 		{FC59D635-19B7-4A4C-A2B6-47CF5F15CD1C} = {365E1F08-5453-446F-9AD8-0503DC028918}
+		{3B232981-B439-4894-96AD-6B86D0932DCE} = {A21118F7-8260-4D8A-9E50-39EEE2229C05}
+		{8270BA60-AD93-419F-8AAB-8D20C565C8CE} = {A21118F7-8260-4D8A-9E50-39EEE2229C05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C4200F2-EE6D-452B-A140-1A87B230CDEB}
