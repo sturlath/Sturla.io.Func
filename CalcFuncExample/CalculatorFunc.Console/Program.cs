@@ -4,7 +4,7 @@ using Sturla.io.Func.CalculatorLib;
 
 namespace Sturla.io.Func.Calculator.Console
 {
-	public class Program
+	public static class Program
 	{
 		/// <summary>
 		/// Use the following to run in a console:
@@ -22,7 +22,7 @@ namespace Sturla.io.Func.Calculator.Console
 			.CreateLogger();
 			#endregion
 
-			var mathRunner = new MathRunner();
+			var mathRunner = new CalculatorLib.Calculator();
 
 			Parser.Default.ParseArguments<Options>(args)
 			.WithParsed(o =>
@@ -33,24 +33,22 @@ namespace Sturla.io.Func.Calculator.Console
 
 				if (o.Add)
 				{
-					result = mathRunner.RunMethod(o.Value1, o.Value2, Addition.Add);
+					result = mathRunner.Calculate(o.Value1, o.Value2, Addition.Add);
 				}
 				else if (o.Multiply)
 				{
-
-					result = mathRunner.RunMethod(o.Value1, o.Value2, Multiplication.Multiply);
+					result = mathRunner.Calculate(o.Value1, o.Value2, Multiplication.Multiply);
 				}
 				else if (o.Subtract)
 				{
-
-					result = mathRunner.RunMethod(o.Value1, o.Value2, Subtraction.Substract);
+					result = mathRunner.Calculate(o.Value1, o.Value2, Subtraction.Substract);
 				}
 
 				Log.Information("Result: " + result);
 			});
 		}
 
-		class Options
+		private class Options
 		{
 			[Option('a', "Add", HelpText = "Add two values together.")]
 			public bool Add { get; set; }
