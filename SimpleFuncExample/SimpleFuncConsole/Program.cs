@@ -11,14 +11,14 @@ namespace SimpleFuncConsole
 			Func<StateEntry> wheatherChangeStateFunction = () =>
 			{
 				// state change code omitted
-				return new StateEntry() { StateChanged = true };
+				return new StateEntry() { StateChanged = true, Message = "The whether will be great" };
 			};
 
 			// Using anonymous method
-			Func<StateEntry> productionChangeStateFunction = delegate() 
+			Func<StateEntry> productionChangeStateFunction = delegate ()
 			{
 				// state change code omitted
-				return new StateEntry() { StateChanged = true };
+				return new StateEntry() { StateChanged = true, Message = "Production is now Stopped!" };
 			};
 
 			// This is an local function that can be used instead of func. 
@@ -26,7 +26,7 @@ namespace SimpleFuncConsole
 			StateEntry customerChangeStateFunction()
 			{
 				// state change code omitted
-				return new StateEntry() { StateChanged = true };
+				return new StateEntry() { StateChanged = true, Message = "Customer has been notified" };
 			}
 
 			//etc.
