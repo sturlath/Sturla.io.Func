@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 {
-	class Program
+	static class Program
 	{
 		static void Main(string[] args)
 		{

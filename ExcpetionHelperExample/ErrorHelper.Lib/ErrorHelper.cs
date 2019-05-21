@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace Sturla.io.Func.ErrorHelperLib
 {
-	public class ErrorHelper
+	public static class ErrorHelper
 	{
 		public const string HttpStatus500 = "500";
 
@@ -104,7 +104,7 @@ namespace Sturla.io.Func.ErrorHelperLib
 			// Here you will have to handle all the status codes you want to result in an error message.
 			if (message.StatusCode == HttpStatusCode.Unauthorized)
 			{
-				T response = new T
+				return new T
 				{
 					Error = new Error
 					{
@@ -112,8 +112,6 @@ namespace Sturla.io.Func.ErrorHelperLib
 						ErrorMessage = receiveStream,
 					}
 				};
-
-				return response;
 			}
 
 			if (message.StatusCode == HttpStatusCode.OK)
