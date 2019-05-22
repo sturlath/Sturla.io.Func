@@ -26,18 +26,18 @@ namespace Sturla.io.Func.CachingOfExpensiveMethodCalls.Console
 		/// <returns></returns>
 		public static Func<TArgument, TResult> Memoize<TArgument, TResult>(this Func<TArgument, TResult> function)
 		{
-			var allDictionaries = new Dictionary<string, Dictionary<TArgument, TResult>>();
+			var allMethodsDictionaries = new Dictionary<string, Dictionary<TArgument, TResult>>();
 
 			var name = function.Method.Name;
 
 			// If the this kind of function has not been cached (Memoized) before we need to create a dictionary and add it. 
-			if (!allDictionaries.TryGetValue(name, out Dictionary<TArgument, TResult> functionDictionary))
+			if (!allMethodsDictionaries.TryGetValue(name, out Dictionary<TArgument, TResult> functionDictionary))
 			{
 				functionDictionary = new Dictionary<TArgument, TResult>();
 
 				Log.Information("MethodName: {name}, ReturnType: {returnType}", name, function.Method.ReturnType);
 
-				allDictionaries.Add(name, functionDictionary);
+				allMethodsDictionaries.Add(name, functionDictionary);
 			}
 
 			return key =>
